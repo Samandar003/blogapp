@@ -1,1 +1,1 @@
-it is a blog app with registration and login
+it is a blog app with user registration and login
