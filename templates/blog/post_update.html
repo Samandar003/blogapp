@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% if object.author == user %}
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{form|crispy}} 
+    <input type="submit" value="Save">  
+  </form>
+{% else %}
+  <h4> You can not edit " <a href="{% url 'post-detail' post.id %}"> {{object.title}} </a>", because the auhtor is {{object.author}} </h4>
+{% endif %}
+  {% endblock content %}
